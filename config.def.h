@@ -146,11 +146,12 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-
+	/* System state keybinding */
+	{ MODKEY|ShiftMask,             XK_l,      spawn,          SHCMD("i3lock") },
 	/* Audio keybindings */
-	{ Mod4Mask, XK_slash,          spawn, SHCMD("pamixer -t") },
-	{ Mod4Mask, XK_bracketleft,	spawn, SHCMD("pamixer --allow-boost -i 5") },
-	{ Mod4Mask, XK_bracketright,	spawn, SHCMD("pamixer --allow-boost -d 5") },
+	{ MODKEY, XK_slash,          spawn, SHCMD("pamixer -t") },
+	{ MODKEY, XK_bracketleft,	spawn, SHCMD("pamixer --allow-boost -i 5") },
+	{ MODKEY, XK_bracketright,	spawn, SHCMD("pamixer --allow-boost -d 5") },
 	
 	/* Emacs keybindings */
 	{ MODKEY|ShiftMask,        XK_p,        spawn, SHCMD("emacsclient -c -a 'emacs'") },
