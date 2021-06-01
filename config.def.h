@@ -153,7 +153,7 @@ static Key keys[] = {
 	{ Mod4Mask, XK_bracketright,	spawn, SHCMD("pamixer --allow-boost -d 5") },
 	
 	/* Emacs keybindings */
-	{ Mod4Mask,        XK_p,        spawn, SHCMD("emacsclient -c -a 'emacs'") },
+	{ MODKEY|ShiftMask,        XK_p,        spawn, SHCMD("emacsclient -c -a 'emacs'") },
   };
 
 /* button definitions */
