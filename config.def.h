@@ -124,7 +124,7 @@ static Key keys[] = {
 	{ MODKEY|Mod4Mask,              XK_0,      togglegaps,     {0} },
 	{ MODKEY|Mod4Mask|ShiftMask,    XK_0,      defaultgaps,    {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
-	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
+	{ MODKEY,                       XK_c,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
@@ -149,7 +149,7 @@ static Key keys[] = {
 	/* System state keybinding */
 	{ MODKEY|ShiftMask,             XK_l,      spawn,          SHCMD("i3lock") },
 	/* Audio keybindings */
-	{ MODKEY, XK_slash,          spawn, SHCMD("pamixer -t") },
+	{ MODKEY, XK_slash,             spawn, SHCMD("pamixer -t") },
 	{ MODKEY, XK_bracketleft,	spawn, SHCMD("pamixer --allow-boost -i 5") },
 	{ MODKEY, XK_bracketright,	spawn, SHCMD("pamixer --allow-boost -d 5") },
 	
