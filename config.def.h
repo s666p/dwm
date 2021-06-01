@@ -80,7 +80,7 @@ static const Layout layouts[] = {
 };
 
 /* key definitions */
-#define MODKEY Mod1Mask
+#define MODKEY Mod4Mask
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -149,8 +149,8 @@ static Key keys[] = {
 
 	/* Audio keybindings */
 	{ Mod4Mask, XK_slash,          spawn, SHCMD("pamixer -t") },
-	{ Mod4Mask, XK_period,	spawn, SHCMD("pamixer --allow-boost -i 5") },
-	{ Mod4Mask, XK_comma,	spawn, SHCMD("pamixer --allow-boost -d 5") },
+	{ Mod4Mask, XK_bracketleft,	spawn, SHCMD("pamixer --allow-boost -i 5") },
+	{ Mod4Mask, XK_bracketright,	spawn, SHCMD("pamixer --allow-boost -d 5") },
 	
 	/* Emacs keybindings */
 	{ Mod4Mask,        XK_p,        spawn, SHCMD("emacsclient -c -a 'emacs'") },
