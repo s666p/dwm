@@ -93,7 +93,7 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]  = { "st", NULL };
+static const char *termcmd[]  = { "st", "-f", "monospace:size=16", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -147,9 +147,14 @@ static Key keys[] = {
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 
+	/* Audio keybindings */
+	{ Mod4Mask, XK_slash,          spawn, SHCMD("pamixer -t") },
+	{ Mod4Mask, XK_period,	spawn, SHCMD("pamixer --allow-boost -i 5") },
+	{ Mod4Mask, XK_comma,	spawn, SHCMD("pamixer --allow-boost -d 5") },
+	
 	/* Emacs keybindings */
-	{ Mod4Mask,                  XK_e,      spawn,      SHCMD("emacsclient -c -a 'emacs'") }
-};
+	{ Mod4Mask,        XK_p,        spawn, SHCMD("emacsclient -c -a 'emacs'") },
+  };
 
 /* button definitions */
 /* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */
